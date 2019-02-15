@@ -1,0 +1,117 @@
+\section{Netwerksimulatie met PacketTracer.}
+
+\begin{frame}{Een eenvoudig LAN opzetten.}
+
+\begin{itemize}
+  \item Voeg twee \alert{pc's} en een \alert{switch} toe
+  \item \alert{Verbind} beide pc's met de switch
+  \begin{itemize}
+    \item Copper Straight-Through kabel
+  \end{itemize}
+  \item Geef beide pc's een \alert{IP-adres}
+  \begin{itemize}
+    \item binnen hetzelfde netwerk!
+    \item bv. 192.168.1.0/255.255.255.0
+  \end{itemize}
+  \item Test de verbinding met \alert{\texttt{ping}}
+\end{itemize}
+
+\centering
+\includegraphics[width=5cm]{img/pt-pcs.png}
+
+\end{frame}
+
+\begin{frame}{Een server toevoegen.}
+
+\begin{itemize}
+  \item Voeg een \alert{server} toe
+  \item \alert{Verbind} met de switch
+  \item Geef de server een \alert{IP-adres}
+  \item Test de verbinding
+  \begin{itemize}
+    \item Kan je \texttt{ping}en vanaf de pc's?
+    \item Kan je de website bekijken?
+  \end{itemize}
+\end{itemize}
+
+\centering
+\includegraphics[width=5cm]{img/pt-server.png}
+
+\end{frame}
+
+\begin{frame}{Netwerkdiensten (services).}
+  \Large\bfseries
+  \alert{Applicaties} die over een netwerk communiceren volgens een vastgelegde ``taal'' of \alert{protocol}.
+\end{frame}
+
+\begin{frame}{Netwerkdiensten (services).}
+\centering
+\includegraphics[width=\textwidth]{img/protocols.png}
+\end{frame}
+
+\begin{frame}{Poortnummers.}
+\centering
+\begin{tabular}{cll}
+	\toprule
+	\textbf{Poortnr.} & \textbf{Protocol} & \textbf{Definitie}               \\
+	\midrule
+	20                & FTP data          & File Transfer Protocol           \\
+	21                & FTP control       &                                  \\
+	22                & SSH               & Secure SHell                     \\
+	25                & SMTP              & Simple Mail Transfer Protocol    \\
+	53                & DNS               & Domain Name Service              \\
+	80                & HTTP              & Hypertext Transfer Protocol      \\
+	143               & IMAP              & Internet Message Access Protocol \\
+	443               & HTTPS             & HTTP Secure                      \\
+	\bottomrule
+\end{tabular}
+\end{frame}
+
+\begin{frame}{Poortnummers.}
+  \begin{itemize}
+    \item \alert{0-1023} Well known ports, systeempoorten
+    \item \alert{1024-49151} Registered ports
+    \item \alert{49152-65535} Dynamic ports, clients
+  \end{itemize}
+
+  Zie: \url{https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers}
+\end{frame}
+
+\begin{frame}{Adressering.}
+\framesubtitle{Het hele verhaal.}
+\large\centering
+\begin{tabular}{|c|l}
+  \cline{1-1}
+  Applicatie     & \\
+  \cline{1-1}
+  Transport      & $\leftarrow$ Poortnummer \\
+  \cline{1-1}
+  Internet       & $\leftarrow$ IP-adres \\
+  \cline{1-1}
+  Netwerktoegang & $\leftarrow$ MAC-adres \\
+  \cline{1-1}
+  Hardware       & \\
+  \cline{1-1}
+\end{tabular}
+\end{frame}
+
+\begin{frame}[plain]
+\frametitle{De structuur van een IP-pakket.}
+\centering
+\includegraphics[height=.9\textheight]{img/ip-pakket-structuur}
+\end{frame}
+
+\begin{frame}[plain]
+\frametitle{Adressering in een IP-pakket.}
+\centering
+\includegraphics[height=.9\textheight]{img/ip-pakket-adressering}
+\end{frame}
+
+\begin{frame}{Een service toevoegen.}
+\begin{itemize}
+  \item Activeer DNS service op de server
+  \item Geef de server een naam, bv. \alert{www.workshop.net}
+  \item Zorg dat de pc's de server als DNS gebruiken
+  \item Kan je de website bekijken via \alert{http://www.workshop.net/}?
+\end{itemize}
+\end{frame}

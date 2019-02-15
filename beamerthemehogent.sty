@@ -1,0 +1,118 @@
+%==========================================================================
+% LaTeX Beamer Presentatiestijl voor HoGent - huisstijl 2018
+%==========================================================================
+% Auteur: Bert Van Vreckem [bert.vanvreckem@hogent.be]
+
+\ProvidesPackage{beamerthemehogent}
+
+\mode<presentation>
+
+%--------------------------------------------------------------------------
+% Nodige packages
+%--------------------------------------------------------------------------
+
+\RequirePackage{tikz}
+\usetikzlibrary{fadings,positioning}
+\RequirePackage[overlay, absolute]{textpos}
+\RequirePackage{fontspec}
+
+%--------------------------------------------------------------------------
+% Kleuren
+%--------------------------------------------------------------------------
+% Bron: https://hnet.hogent.be/themas/communicatie/huisstijl-logo-s-en-sjablonen/kleurgebruik/
+
+% Kleurendefinities
+
+\definecolor{hgdarkgreen}{RGB}{22,176,165}
+\definecolor{hgpink}{RGB}{241,157,160}
+\definecolor{hgochre}{RGB}{250,188,50}
+\definecolor{hgorange}{RGB}{239,135,103}
+\definecolor{hgpurple}{RGB}{187,144,189}
+\definecolor{hgblue}{RGB}{76,162,213}
+\definecolor{hglightgreen}{RGB}{165,202,114}
+\definecolor{hgbrown}{RGB}{216,176,131}
+\definecolor{hggrey}{RGB}{195,187,175}
+\definecolor{hgyellow}{RGB}{244,222,0}
+
+%--------------------------------------------------------------------------
+% Lettertypes
+%--------------------------------------------------------------------------
+
+\setsansfont{Montserrat}
+\setmonofont{Fira Code}
+
+\setmathrm{Montserrat}
+\setmathsf{Montserrat}
+\setmathtt{Fira Code}
+\setboldmathrm{Montserrat ExtraBold}
+
+%\setbeamerfont{normal text}{size=\large}
+\setbeamerfont{title}{series=\bfseries, size=\Huge}
+\setbeamerfont{subtitle}{series=\bfseries, size=\large}
+\setbeamerfont{frametitle}{series=\bfseries, size=\Huge}
+
+\setbeamerfont{alerted text}{series=\bfseries}
+
+%--------------------------------------------------------------------------
+% ``Outer'' templates
+%--------------------------------------------------------------------------
+
+\setbeamertemplate{title page}{%
+  \begin{beamercolorbox}[wd=\paperwidth, ht=.8\textheight, leftskip=1cm]{title page header}
+    \usebeamerfont{title}\usebeamercolor{title}\inserttitle \\%
+    \usebeamerfont{subtitle}\usebeamercolor{subtitle}\insertsubtitle%
+    
+    \bigskip\bigskip\bigskip\bigskip
+    
+    \usebeamerfont{framesubtitle}\insertauthor%
+    
+    \insertdate
+  \end{beamercolorbox}%
+}
+
+% Met dit template kan je een afbeelding op de achtergrond toevoegen, uitgeknipt
+% in de vorm van een gekozen letter.
+% Voorbeeld gebruik:
+% \setbeamertemplate{background}[imgletter]{img/example.jpg}{E}
+%
+% Bronnen:
+% https://tex.stackexchange.com/questions/63146/negative-font-overlayed-with-a-photo
+% https://tex.stackexchange.com/questions/451312/positioning-of-text-in-tikzfadingfrompicture
+% Met dank aan TeX.SE-gebruikers marmot en samcarter voor hun hulp
+
+\defbeamertemplate{background}{imgletter}[2]{%
+  \begin{tikzfadingfrompicture}[name=letter#2]
+    \path[use as bounding box] (-15,-4) rectangle (6,12);
+    \node[text=transparent!0] {\fontspec[Scale=20]{Code Pro Black}#2};
+  \end{tikzfadingfrompicture}
+  
+  \begin{tikzpicture}[remember picture,overlay,anchor=north west]
+  \node[scope fading=letter#2,fit fading=false]
+  at (current page.north west) {\includegraphics[height=\textheight]{#1}};
+  \end{tikzpicture}
+}
+
+% Voeg een titeldia toe bij het begin van een nieuwe sectie
+\AtBeginSection[] % Do nothing for \section*
+{
+  \begin{frame}<beamer>
+
+    \begin{beamercolorbox}[wd=\paperwidth, ht=.5\textheight, leftskip=1cm]{title page header}
+      \usebeamerfont{title}\usebeamercolor{title}\insertsection%
+    \end{beamercolorbox}%
+  \end{frame}
+}
+
+%--------------------------------------------------------------------------
+% ``Inner'' templates
+%--------------------------------------------------------------------------
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[default]
+
+% ``bullets'' op drie niveaus
+\setbeamertemplate{itemize item}{$\bullet$}  % opgevulde cirkel
+\setbeamertemplate{itemize subitem}{$\circ$} % lege cirkel
+\setbeamertemplate{itemize subsubitem}{--}   % streepje
+
+\mode<all>
