@@ -1,0 +1,62 @@
+\documentclass[aspectratio=169,12pt]{beamer}
+
+% Je kan het lettertype iets vergroten door hierboven optie ``14pt'' toe te
+% voegen.
+
+%==============================================================================
+% Aanloop
+%==============================================================================
+
+%---------- Vormgeving --------------------------------------------------------
+
+\usetheme{hogent}
+
+% Kies hieronder een achtergrondkleur
+\usecolortheme{hgwhite} % witte achtergrond, zwarte tekst
+%\usecolortheme{hgblack} % zwarte achtergrond, witte tekst
+
+%---------- Packages ----------------------------------------------------------
+
+\usepackage[dutch]{babel}      % Nederlandse taal: splitsingen, enz.
+
+\usepackage{booktabs}          % Mooie tabellen
+\usepackage{multirow,multicol} % Tabelcellen samenvoegen
+\usepackage{eurosym}           % Euro symbool
+\usepackage{fancyvrb}          % Verbatim-omgeving met opmaakmogelijkheden
+
+%---------- Commando-definities -----------------------------------------------
+
+%---------- Info over de presentatie ------------------------------------------
+
+\title{Follow the message.}
+\subtitle{Workshop voor leerlingen secundair onderwijs}
+\author{HOGENT toegepaste informatica}
+\date{}
+
+%==============================================================================
+% Inhoud presentatie
+%==============================================================================
+
+\begin{document}
+
+%---------- Titelpagina, inhoudstafel -----------------------------------------
+
+\frame{\maketitle}
+
+\begin{frame}
+  \frametitle{Inhoud.}
+
+  \tableofcontents
+\end{frame}
+ 
+%---------- Corpus ------------------------------------------------------------
+
+\input{doelstelling}
+\input{opleiding-tin}
+\input{netwerkapparatuur}
+\input{adressering}
+\input{packettracer-lan}
+\input{packettracer-routering}
+\input{tot-slot}
+
+\end{document}
