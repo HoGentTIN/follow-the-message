@@ -8,8 +8,13 @@ Het doel van deze workshop is de kennis die je in Computernetwerken 1 opgedaan h
 
 - Voeg een switch (Switch0) en twee pc's toe (PC0 en PC1)
 - Verbind elke pc via een UTP-kabel met de switch
-- Geef beide pc's een IP-adres (Config > FastEthernet0 > IP Address). Achteraan dit document vind je een sjabloon voor een tabel waar je alle IP-adressen in de opstelling kan bijhouden.
+- Geef beide pc's een IP-adres (Config > FastEthernet0 > IP Address). Vul de adrestabel aan met de gekozen adressen.
 - Ga naar op beide pc's naar Desktop > Command prompt en ga na of je de andere pc kan bereiken via `ping <IP-adres>`
+
+| **Host** | **Interface**      | **IP-adres** | **Netwerkmasker** | **Default gateway** |
+| :---     | :---               | :---         | :---              | :---:               |
+| PC0      | FastEthernet0      |              |                   |                     |
+| PC1      | FastEthernet0      |              |                   |                     |
 
 ![Pingen van PC0 naar PC1](img/follow-02.png){width=8cm}
 
@@ -30,6 +35,12 @@ Aandachtspunten:
 - Activeer de DNS service op de server. Voeg een "A-record" toe met een hostnaam voor je server (bv. "www.workshop.net") en het correcte IP-adres.
 - Zorg dat PC0 en PC1 weten dat er een DNS server beschikbaar is via Config > Global Settings en vul het IP-adres van Server0 in.
 - Verifieer op één van de pc's dat je de website kan zien door "www.workshop.net" in de adresbalk in te tikken.
+
+| **Host** | **Interface**      | **IP-adres** | **Netwerkmasker** | **Default gateway** |
+| :---     | :---               | :---         | :---              | :---:               |
+| PC0      | FastEthernet0      |              |                   |                     |
+| PC1      | FastEthernet0      |              |                   |                     |
+| Server0  | FastEthernet0      |              |                   |                     |
 
 ![De website is te zien via de hostnaam](img/follow-04.png){width=8cm}
 
@@ -52,6 +63,17 @@ In deze stap gaan we een nieuw LAN toevoegen met een pc en een switch, en doorve
     .!!!!
     Success rate is 80 percent (4/5), round-trip min/avg/max = 0/0/0 ms
     ```
+
+| **Host** | **Interface**      | **IP-adres** | **Netwerkmasker** | **Default gateway** |
+| :---     | :---               | :---         | :---              | :---:               |
+| PC0      | FastEthernet0      |              |                   |                     |
+| PC1      | FastEthernet0      |              |                   |                     |
+| Server0  | FastEthernet0      |              |                   |                     |
+| Router0  | GigabitEthernet0/0 |              |                   | ---                 |
+|          | GigabitEthernet0/1 |              |                   | ---                 |
+| Router1  | GigabitEthernet0/0 |              |                   | ---                 |
+|          | GigabitEthernet0/1 |              |                   | ---                 |
+| PC2      | FastEthernet0      |              |                   |                     |
 
 Aandachtspunten:
 
@@ -138,18 +160,3 @@ Enkele aanwijzingen bij het zoeken naar de oorzaak van netwerkproblemen.
     - Een correct IP-adres en bijhorend netwerkmasker
     - Een "default gateway"
     - Een DNS-server
-
-## Adrestabel
-
-Hier vind je een adrestabel die je kan aanvullen met de IP-adressen die je kiest voor alle apparatuur in de netwerkopstelling.
-
-| **Host**    | **Interface** | **IP-adres** | **Netwerkmasker** | **Default gateway** |
-| :---    | :---               | :---     | :---          | :---:            |
-| PC0     | FastEthernet0      |          |               |                 |
-| PC1     | FastEthernet0      |          |               |                 |
-| Server0 | FastEthernet0      |          |               |                 |
-| Router0 | GigabitEthernet0/0 |          |               |  ---            |
-|         | GigabitEthernet0/1 |          |               |  ---            |
-| Router1 | GigabitEthernet0/0 |          |               |  ---            |
-|         | GigabitEthernet0/1 |          |               |  ---            |
-| PC2     | FastEthernet0      |          |               |                 |
