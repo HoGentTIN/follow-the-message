@@ -8,7 +8,7 @@ In deze workshop maken we gebruik van [Cisco PacketTracer](https://www.netacad.c
 
 ## Labo-opgave
 
-Uitgewerkte instructies voor de labo-opgave vind je [hier](labo.md).
+Uitgewerkte instructies voor de labo-opgave vind je [hier](labo.md). PacketTracer-bestanden met de begin- en eindsituatie vind je in de directory `packettracer/`. Deze zijn aangemaakt in PacketTracer 7.1.1. Als je zelf met een nieuwere versie werkt, is het mogelijk dat deze niet correct kunnen geopend worden.
 
 ## Slides
 
