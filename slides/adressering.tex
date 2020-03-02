@@ -37,7 +37,7 @@
   \frametitle{Adressen opvragen (Linux).}
   \scriptsize
 \begin{Verbatim}[commandchars=\\\{\}]
-$ \alert{ip addr}
+$ \alert{ip address}
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state ...
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
@@ -57,7 +57,9 @@ $ \alert{ip addr}
 
 \begin{frame}[fragile]
   \frametitle{Adressen opvragen (Linux).}
+  \framesubtitle{Hardware (MAC) adres}
   \scriptsize
+  
 \begin{Verbatim}[commandchars=\\\{\}]
 $ ip addr
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state ...
@@ -75,14 +77,13 @@ $ ip addr
 3: em1: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc ...
     link/ether f0:1f:af:2a:62:32 brd ff:ff:ff:ff:ff:ff
 \end{Verbatim}
-
-\hspace{2cm}\textbf{Hardware (MAC) adres}
-
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Adressen opvragen (Linux).}
-\scriptsize
+  \frametitle{Adressen opvragen (Linux).}
+  \framesubtitle{IPv4-adres}
+
+  \scriptsize
 \begin{Verbatim}[commandchars=\\\{\}]
 $ ip addr
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state ...
@@ -100,14 +101,14 @@ $ ip addr
 3: em1: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc ...
     link/ether f0:1f:af:2a:62:32 brd ff:ff:ff:ff:ff:ff
 \end{Verbatim}
-
-\hspace{2cm}\textbf{IPv4-adres}
-
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Adressen opvragen (Linux).}
-\scriptsize
+  \frametitle{Adressen opvragen (Linux).}
+  \framesubtitle{IPv6-adres}
+  
+  \scriptsize
+
 \begin{Verbatim}[commandchars=\\\{\}]
 $ ip addr
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state ...
@@ -125,9 +126,6 @@ $ ip addr
 3: em1: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc ...
     link/ether f0:1f:af:2a:62:32 brd ff:ff:ff:ff:ff:ff
 \end{Verbatim}
-
-\hspace{2cm}\textbf{IPv6-adres}
-
 \end{frame}
 
 \begin{frame}{Adressen opvragen (Windows).}
@@ -146,15 +144,15 @@ $ ip addr
 \centering
 \begin{tabular}{ll}
 	\toprule
-	\textbf{MAC}               & \textbf{IP}              \\
+	\textbf{MAC (Media Access Control)} & \textbf{IP}              \\
 	\midrule
-	Hardware                   & Software                 \\
-	Afh.~technologie           & Universeel               \\
-	Elke NIC heeft uniek adres & Elke host binnen LAN     \\
-	                           & heeft uniek adres        \\
-	Enkel binnen LAN           & Internet/WAN             \\
-	vgl.~naam (onveranderlijk) & vgl~adres (veranderlijk, \\
-	                           & bv.~verhuis)             \\
+	Hardware                            & Software                 \\
+	Afh.~technologie                    & Universeel               \\
+	Elke NIC heeft uniek adres          & Elke host binnen LAN     \\
+	                                    & heeft uniek adres        \\
+	Enkel binnen LAN                    & Internet/WAN             \\
+	vgl.~naam (onveranderlijk)          & vgl~adres (veranderlijk, \\
+	                                    & bv.~verhuis)             \\
 	\bottomrule
 \end{tabular}
 \end{frame}
